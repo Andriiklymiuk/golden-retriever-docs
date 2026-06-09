@@ -243,3 +243,21 @@ This extension is released under the MIT License.
 ---
 
 Great thanks to postman team introducing newman, it is used for tests compatibility.
+
+---
+
+## Documentation site
+
+This repo also hosts the **Golden Retriever documentation site** (Docusaurus), published to GitHub Pages at
+**https://andriiklymiuk.github.io/golden-retriever-docs/** — covering the VS Code extension, the [`golden` CLI](https://github.com/Andriiklymiuk/golden-cli), and the Claude Code plugin.
+
+```bash
+bun install     # install deps
+bun start       # dev server → http://localhost:3000/golden-retriever-docs/
+bun run build   # production build into ./build
+```
+
+Content lives under `docs/`; the homepage is `src/pages/index.tsx`. Pushes to `main` build and deploy
+automatically via `.github/workflows/deploy.yml`.
+
+**One-time setup:** repo **Settings → Pages → Source = GitHub Actions**.

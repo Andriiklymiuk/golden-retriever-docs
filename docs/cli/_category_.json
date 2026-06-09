@@ -1,0 +1,9 @@
+{
+  "label": "CLI",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "title": "golden CLI",
+    "description": "Every golden command and its flags. The CLI runs the same collections/ files as the VS Code extension — in CI, in a TUI, or driven by an AI agent. Two identical binaries: golden and the short alias gr."
+  }
+}

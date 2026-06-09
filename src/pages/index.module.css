@@ -1,0 +1,302 @@
+/**
+ * CSS files with the .module.css suffix will be treated as CSS modules
+ * and scoped locally.
+ */
+
+.heroBanner {
+  position: relative;
+  overflow: hidden;
+  padding: 6rem 0 5rem;
+  text-align: center;
+  color: var(--golden-hero-fg);
+  background: var(--golden-hero-bg);
+}
+
+.heroBanner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(var(--golden-hero-grid) 1px, transparent 1px);
+  background-size: 22px 22px;
+  background-position: 0 0;
+  mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, #000 0%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, #000 0%, transparent 75%);
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.heroBanner > * {
+  position: relative;
+  z-index: 1;
+}
+
+@media screen and (max-width: 996px) {
+  .heroBanner {
+    padding: 3.5rem 1.25rem 3rem;
+  }
+}
+
+.heroLogo {
+  margin: 0 auto 1.25rem;
+  display: grid;
+  place-items: center;
+  animation: bob 4s ease-in-out infinite;
+}
+
+.heroLogo img {
+  width: 96px;
+  height: 96px;
+  display: block;
+  border-radius: 22px;
+}
+
+@keyframes bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.heroTitle {
+  font-family: 'Inter Tight', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-weight: 700;
+  font-size: clamp(2.4rem, 5.5vw, 4rem);
+  line-height: 1.05;
+  margin: 0 0 0.6rem;
+  letter-spacing: -0.035em;
+  color: var(--golden-hero-fg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  flex-wrap: wrap;
+}
+
+.heroAccent {
+  font-size: 0.85em;
+  line-height: 1;
+  display: inline-block;
+  transform: translateY(0.05em);
+}
+
+.heroTagline {
+  font-size: clamp(1rem, 1.6vw, 1.2rem);
+  font-weight: 500;
+  color: var(--golden-hero-fg-soft);
+  max-width: 38rem;
+  margin: 0 auto 2.4rem;
+}
+
+.installShell {
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+.terminal {
+  position: relative;
+  background: var(--golden-terminal-bg);
+  border-radius: 14px;
+  padding: 0;
+  text-align: start;
+  box-shadow:
+    0 24px 60px -20px rgba(0, 0, 0, 0.45),
+    0 4px 12px -4px rgba(0, 0, 0, 0.25),
+    inset 0 0 0 1px var(--golden-terminal-border);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.terminal:hover {
+  transform: translateY(-2px);
+}
+
+.terminalChrome {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.65rem 0.95rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid var(--golden-terminal-border);
+}
+
+.terminalChrome::before,
+.terminalChrome::after,
+.terminalDot {
+  content: '';
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  display: block;
+}
+
+.terminalChrome::before { background: #ff5f57; }
+.terminalDot { background: #febc2e; }
+.terminalChrome::after { background: #28c840; }
+
+.terminalLabel {
+  margin-left: auto;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  color: color-mix(in oklab, var(--golden-terminal-fg) 55%, transparent);
+  letter-spacing: 0.04em;
+  text-transform: lowercase;
+}
+
+.terminal :global(.theme-code-block) {
+  margin: 0;
+  background: transparent !important;
+  box-shadow: none !important;
+  color: var(--golden-terminal-fg) !important;
+}
+
+.terminal :global(pre) {
+  background: transparent !important;
+  margin: 0;
+  border-radius: 0;
+  color: var(--golden-terminal-fg) !important;
+}
+
+.terminal :global(code),
+.terminal :global(.token) {
+  color: var(--golden-terminal-fg) !important;
+  background: transparent !important;
+}
+
+.terminal :global(.token.comment),
+.terminal :global(.token.prolog),
+.terminal :global(.token.doctype),
+.terminal :global(.token.cdata) {
+  color: var(--golden-terminal-comment) !important;
+  font-style: italic;
+}
+
+.terminal :global(.token.punctuation) {
+  color: color-mix(in oklab, var(--golden-terminal-fg) 75%, transparent) !important;
+}
+
+.terminal :global(.token.keyword),
+.terminal :global(.token.builtin),
+.terminal :global(.token.boolean) {
+  color: var(--golden-honey) !important;
+}
+
+.terminal :global(.token.string),
+.terminal :global(.token.url) {
+  color: #b5e48c !important;
+}
+
+.terminal :global(.token.function) {
+  color: var(--golden-fur) !important;
+}
+
+.terminal :global(.theme-code-block-highlighted-line) {
+  background: rgba(255, 255, 255, 0.06) !important;
+}
+
+.terminal :global(.clean-btn),
+.terminal :global(button[class*="copyButton"]) {
+  color: var(--golden-terminal-fg) !important;
+}
+
+.tryItBlock {
+  margin-top: 1rem;
+}
+
+.ctaRow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.85rem;
+  margin-top: 2.4rem;
+}
+
+@media screen and (min-width: 640px) {
+  .ctaRow {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+.primaryButton {
+  background: var(--golden-hero-fg);
+  color: var(--golden-hero-bg);
+  border: 2px solid var(--golden-hero-fg);
+  padding: 0.85rem 1.6rem;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1rem;
+  font-family: inherit;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+  box-shadow: 0 8px 20px -8px color-mix(in oklab, var(--golden-hero-fg) 45%, transparent);
+}
+
+.primaryButton:hover {
+  color: var(--golden-hero-bg);
+  text-decoration: none;
+  transform: translateY(-2px);
+  opacity: 0.92;
+  box-shadow: 0 12px 28px -10px color-mix(in oklab, var(--golden-hero-fg) 55%, transparent);
+}
+
+.secondaryButton {
+  background: transparent;
+  color: var(--golden-hero-fg);
+  border: 2px solid var(--golden-hero-fg);
+  padding: 0.85rem 1.6rem;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1rem;
+  font-family: inherit;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.secondaryButton:hover {
+  background: var(--golden-hero-fg);
+  color: var(--golden-hero-bg);
+  text-decoration: none;
+  transform: translateY(-2px);
+}
+
+.heroFadeIn {
+  animation: fadeUp 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.heroFadeInDelay {
+  animation: fadeUp 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) 0.12s both;
+}
+
+.heroFadeInDelay2 {
+  animation: fadeUp 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) 0.24s both;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .heroLogo,
+  .heroFadeIn,
+  .heroFadeInDelay,
+  .heroFadeInDelay2 {
+    animation: none;
+  }
+  .terminal:hover,
+  .primaryButton:hover,
+  .secondaryButton:hover {
+    transform: none;
+  }
+}
