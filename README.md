@@ -60,6 +60,35 @@ https://marketplace.visualstudio.com/items?itemName=andriiklymiuk.golden-retriev
 3. Search for "Golden Retriever"
 4. Click Install
 
+## Command-line companion: the `golden` CLI
+
+The same git-synced `collections/` files run from the terminal with [**golden**](https://github.com/Andriiklymiuk/golden-cli) — a single static binary for CI, a TUI, or AI agents. Same files, no export, no second source of truth.
+
+```bash
+# Homebrew (macOS + Linux)
+brew install andriiklymiuk/homebrew-tools/golden
+
+# shell installer (macOS + Linux)
+curl --proto '=https' --tlsv1.2 -LsSf \
+  https://github.com/Andriiklymiuk/golden-cli/releases/latest/download/golden-cli-installer.sh | sh
+
+# Windows (PowerShell)
+irm https://github.com/Andriiklymiuk/golden-cli/releases/latest/download/golden-cli-installer.ps1 | iex
+
+# from source (Rust 1.82+)
+cargo install --git https://github.com/Andriiklymiuk/golden-cli golden-cli
+```
+
+Then:
+
+```bash
+golden init                 # seed a sample collection under collections/
+golden run collections/     # run everything; exit 0=pass 1=fail 2=error
+golden upgrade              # self-update (alias: golden update)
+```
+
+Prebuilt for macOS (arm64/x64), Linux (arm64/x64, static musl), and Windows (x64). Full reference: **[CLI install docs](https://andriiklymiuk.github.io/golden-retriever-docs/docs/cli/install)**.
+
 ## Getting Started
 
 1. Create a `collections` folder in your workspace root
